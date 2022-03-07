@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:rafay_login_page/screens/signup/sign_up_page.dart';
+import 'package:rafay_login_page/screens/welcome/welcome_page.dart';
 
 import 'login_widgets/custom_input_fields.dart';
 
@@ -44,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    Colors.blue[300]!,
+                    Colors.blue[300]!,  
                     // Colors.indigo,
                     Colors.purple,
                   ],
@@ -52,7 +53,9 @@ class _LoginPageState extends State<LoginPage> {
                 borderRadius: BorderRadius.circular(50),
               ),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, WelcomePage.id);
+                },
                 child: Center(
                   child: Text(
                     "Log In",
