@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:rafay_login_page/screens/home/home_page.dart';
+import 'package:rafay_login_page/screens/signup/sign_up_page.dart';
 
 import 'screens/login/login_screen.dart';
 
@@ -13,12 +15,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Login UI',
-      theme: ThemeData(
-        primaryColor: Colors.deepPurple,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: const LoginPage(),
-    );
+        title: 'Login UI',
+        theme: ThemeData(
+          primaryColor: Colors.deepPurple,
+        ),
+        debugShowCheckedModeBanner: false,
+        // initialRoute: SignUpPage.id,
+        routes: {
+          "/": (context) => const HomePage(),
+          LoginPage.id: (context) => const LoginPage(),
+          SignUpPage.id: (context) => const SignUpPage(),
+        });
   }
 }
